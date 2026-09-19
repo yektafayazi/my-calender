@@ -1,0 +1,580 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #bdefff,
+            #eafaff,
+            #c9f3ff
+        );
+
+    color: #173b56;
+
+    padding: 25px;
+}
+
+
+.app {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background: rgba(255,255,255,0.82);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 50px rgba(40,120,150,0.18);
+}
+
+
+/* HEADER */
+
+header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.subtitle {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #6d9eb7;
+
+    margin-bottom: 5px;
+}
+
+
+h1 {
+    font-size: 42px;
+
+    color: #173b56;
+}
+
+
+.year {
+    background: #173b56;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 14px;
+
+    font-size: 18px;
+}
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+.month-info {
+    text-align: center;
+}
+
+
+.month-info h2 {
+    font-size: 30px;
+
+    color: #173b56;
+}
+
+
+.month-info p {
+    font-size: 12px;
+
+    color: #78a6bb;
+
+    margin-top: 3px;
+}
+
+
+.navigation button {
+    border: none;
+
+    background: #173b56;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+.navigation button:hover {
+    background: #285a78;
+}
+
+
+.navigation button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* WEEKDAYS */
+
+.weekdays {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+
+.weekdays div {
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #628da5;
+
+    padding: 8px;
+}
+/* CALENDAR */
+
+.calendar {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 10px;
+}
+
+
+/* EMPTY */
+
+.empty {
+    min-height: 120px;
+}
+
+
+/* DAY */
+
+.day {
+    min-height: 120px;
+
+    background: white;
+
+    border-radius: 17px;
+
+    padding: 10px;
+
+    border: 2px solid transparent;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: 0.2s;
+}
+
+
+.day:hover {
+    border-color: #91dff5;
+
+    transform: translateY(-2px);
+}
+
+
+.day.selected {
+    border-color: #5fc6e8;
+
+    box-shadow:
+        0 5px 18px rgba(80,180,220,0.2);
+}
+
+
+/* DAY NUMBER */
+
+.day-number {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e1f8ff;
+
+    color: #174765;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+/* FRIDAY */
+
+.day.friday .day-number {
+    background: #ffe1d7;
+
+    color: #c36d53;
+}
+/* DESKTOP NOTE */
+
+.day-note {
+    width: 100%;
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    resize: none;
+
+    background: transparent;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    color: #385a6e;
+}
+
+
+.day-note::placeholder {
+    color: #a8c4d0;
+}
+
+
+/* MOBILE NOTE */
+
+.mobile-note-box {
+    display: none;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #7aa7b9;
+
+    font-size: 11px;
+}
+
+
+/* ================================= */
+/* TABLET */
+/* ================================= */
+
+@media (max-width: 800px) {
+
+    .app {
+        padding: 20px;
+    }
+
+
+    .calendar {
+        gap: 6px;
+    }
+
+
+    .weekdays {
+        gap: 6px;
+    }
+
+
+    .day {
+        min-height: 100px;
+
+        padding: 8px;
+    }
+
+
+    .empty {
+        min-height: 100px;
+    }
+
+}
+/* ================================= */
+/* PHONE */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+
+        background:
+            linear-gradient(
+                160deg,
+                #bdefff,
+                #edfaff
+            );
+    }
+
+
+    .app {
+        min-height: 100vh;
+
+        padding: 18px 10px;
+
+        border-radius: 0;
+
+        background: transparent;
+
+        box-shadow: none;
+    }
+
+
+    /* HEADER */
+
+    header {
+        margin-bottom: 20px;
+    }
+
+
+    h1 {
+        font-size: 30px;
+    }
+
+
+    .subtitle {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .year {
+        padding: 8px 13px;
+
+        font-size: 15px;
+    }
+
+
+    /* NAV */
+
+    .navigation {
+        margin-bottom: 15px;
+    }
+
+
+    .month-info h2 {
+        font-size: 25px;
+    }
+
+
+    .month-info p {
+        font-size: 9px;
+    }
+
+
+    .navigation button {
+        padding: 9px 10px;
+
+        font-size: 10px;
+    }
+
+
+    /* WEEKDAYS */
+
+    .weekdays {
+        gap: 4px;
+    }
+
+
+    .weekdays div {
+        font-size: 7px;
+
+        padding: 5px 0;
+    }
+    /* CALENDAR */
+
+    .calendar {
+        gap: 4px;
+    }
+
+
+    .day {
+        min-height: 65px;
+
+        padding: 5px;
+
+        border-radius: 9px;
+    }
+
+
+    .empty {
+        min-height: 65px;
+    }
+
+
+    .day-number {
+        width: 25px;
+        height: 25px;
+
+        font-size: 10px;
+
+        margin-bottom: 0;
+    }
+
+
+    /* Hide desktop note */
+
+    .day-note {
+        display: none;
+    }
+
+
+    /* Note indicator */
+
+    .day.has-note::after {
+
+        content: "•";
+
+        color: #eea18a;
+
+        font-size: 18px;
+
+        position: absolute;
+
+        bottom: 1px;
+
+        right: 5px;
+    }
+
+
+    /* MOBILE NOTE BOX */
+
+    .mobile-note-box {
+
+        display: block;
+
+        margin-top: 18px;
+
+        padding: 17px;
+
+        background: rgba(255,255,255,0.9);
+
+        border-radius: 18px;
+
+        box-shadow:
+            0 10px 30px rgba(60,150,180,0.15);
+    }
+    .note-label {
+
+        font-size: 9px;
+
+        letter-spacing: 2px;
+
+        color: #78a7bb;
+    }
+
+
+    .mobile-note-box h3 {
+
+        font-size: 15px;
+
+        margin: 4px 0 12px;
+
+        color: #173b56;
+    }
+
+
+    #mobileNote {
+
+        width: 100%;
+
+        min-height: 90px;
+
+        padding: 10px;
+
+        border: 2px solid #d8f1f8;
+
+        border-radius: 12px;
+
+        resize: vertical;
+
+        outline: none;
+
+        font-family: Arial, sans-serif;
+
+        font-size: 13px;
+
+        background: #fbfeff;
+    }
+
+
+    #mobileNote:focus {
+
+        border-color: #7ed5ee;
+    }
+
+
+    #mobileSaveBtn {
+
+        width: 100%;
+
+        margin-top: 10px;
+
+        padding: 11px;
+
+        border: none;
+
+        border-radius: 11px;
+
+        background: #173b56;
+
+        color: white;
+
+        font-size: 12px;
+
+        cursor: pointer;
+    }
+
+}
