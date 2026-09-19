@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Calendar</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header>
+            <div>
+                <p class="subtitle">MY PERSONAL</p>
+                <h1>Calendar</h1>
+            </div>
+
+            <div class="year">1405</div>
+        </header>
+
+
+        <div class="navigation">
+
+            <button id="prevBtn">← Previous</button>
+
+            <div class="month-info">
+                <h2 id="monthTitle">Mehr</h2>
+                <p id="monthNumber">Month 7</p>
+            </div>
+
+            <button id="nextBtn">Next →</button>
+
+        </div>
+
+
+        <div class="weekdays">
+
+            <div>Saturday</div>
+            <div>Sunday</div>
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+
+        </div>
+
+
+        <div id="calendar" class="calendar"></div>
+
+
+        <!-- Mobile note box -->
+
+        <div id="mobileNoteBox" class="mobile-note-box">
+
+            <p class="note-label">NOTE</p>
+
+            <h3 id="selectedDate">
+                Select a day
+            </h3>
+
+            <textarea
+                id="mobileNote"
+                placeholder="Write your note here..."
+            ></textarea>
+
+            <button id="mobileSaveBtn">
+                Save Note
+            </button>
+
+        </div>
+
+
+        <footer>
+            Made with ♡
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
